@@ -1,0 +1,209 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+
+    position: relative;
+    background: url("../images/skyline-1925943_960_720.jpg") no-repeat;
+    background-size: cover; 
+    min-height: 100vh;  
+}
+
+
+.logo 
+{
+    width: 210px;
+    margin:auto;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+/*Navigation menu*/
+.mine
+{
+    text-align: center;
+    width:100%;
+    background: rgb(235, 160, 21);
+    padding: 10px 5px;
+}
+
+
+
+.mine li
+{
+    display: inline-block;
+    color: white;
+    background: rgb(51, 255, 95);
+    padding: 10px 5px;
+    border-radius: 10px;      
+}
+
+
+.mine a:hover
+{        
+   text-shadow: 2px 2px 2px rgb(12, 12, 12);
+}
+
+
+@media screen and (min-width:991px)
+{    
+    .logo 
+    {
+       margin-left:10vw; 
+    }
+
+  .mine
+  {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: none;
+    width: 60%;
+
+  }
+  
+    .mine li
+    {        
+        background: none;
+        font-size: 2em    
+    }
+
+    .mine a:hover
+{
+    text-shadow: 2px 2px 2px rgb(235, 160, 21);
+}
+
+
+
+}
+
+h2
+{
+    padding: 20px;
+    font-size: 3em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(18, 2, 77);
+}
+
+
+/*FORM*/
+
+#login 
+{
+ padding: 60px 20px 20px 20px;
+ text-align: center;
+ position: relative;
+ width: 70vw;
+ margin: 30px auto;
+ background:rgb(153, 255, 51,0.3);
+ overflow: hidden;
+
+}
+
+label
+{
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(10, 10, 10);
+}
+
+input
+{
+    padding: 10px 20px ;
+    width: 100%;
+    border-radius: 50px;
+}
+
+input:focus
+{
+    outline:none;
+}
+
+
+/*blue circles at corner*/
+.inradius
+{
+    width: 60px;
+    height:  60px;
+    background: rgb(71, 138, 214);
+    position: absolute;
+    border-radius: 50%;   
+    
+}
+
+.inradius:nth-child(1)
+{
+  top:-20px;
+  left: -20px;
+}
+
+.inradius:nth-child(2)
+{
+    top:-20px;
+    right: -20px;
+}
+
+
+.inradius:nth-child(3)
+{
+   bottom: -20px;
+   left:-20px;
+}
+
+
+.inradius:nth-child(4)
+{
+  right:-20px;
+   bottom: -20px;
+}
+
+.loginbtn 
+{   
+    color: white;
+    cursor: pointer;
+    background: rgb(235, 160, 21);
+    border-radius: 40px;
+    width: 40vw;
+    margin: 10px auto;
+    padding: 10px;    
+}
+
+@media screen and (min-width:991px)
+{
+        label
+        {
+            font-size: 2em;
+           
+        }
+
+        .loginbtn 
+        {   
+            margin-top: 30px;    
+        }
+
+}
+
+
+@media screen and (min-width:750px) and (max-width:1026px)
+{
+      #login
+        {   
+            margin-top:20vh;    
+        }
+
+}
