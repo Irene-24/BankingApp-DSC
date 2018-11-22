@@ -2,13 +2,16 @@ Change color of menu links on index.html (for desktop view)
 Beef up my index page text content
     -Change all read mores to links for other pages
     -Work on hero image for scren size < 991px
+    -Work on background of header in desktop view
 Preview upload of files (passport)
 Work on fonts
 Navbar on create page
 Work on Gallery and Contact Page
 Work on footer
-Put fa icons cdn links instead of local source
 Create a Print-out form which looks like profile page
 Put favicon
 Don't allow the to go to next unless thyeve filled in all the inputs of a panel in form
 Work on verify function
+Make phone/bvn input large
+Change font size in mobile for text-area
+Maybe remove that bluestuff on arrow, it's not workin well on mobile
