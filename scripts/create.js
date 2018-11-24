@@ -1,3 +1,11 @@
+const fields ={};
+const inputslabels = document.querySelectorAll("label");
+console.log(`i have ${inputslabels.length} labels`);
+
+inputslabels.forEach((el)=>fields[el.attributes.for.value] = [false,0]);
+
+
+
 const panels = document.querySelectorAll("form > div");
 let panel = 0;
 const buttons =document.querySelectorAll("form > span")
@@ -80,10 +88,3 @@ function Validate()  // will push all to person
 
 }
 
-const Person = 
-{
-   personal : {},
-   kin: {},
-   accont: {},
-
-}
