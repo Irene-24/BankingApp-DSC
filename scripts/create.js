@@ -15,21 +15,6 @@ console.log(`I have ${panels.length} panels`)
 buttons[0].addEventListener("click",prev,false);
 buttons[1].addEventListener("click", next, false);
 
-buttons[0].addEventListener("mouseover", change, false);
-buttons[1].addEventListener("mouseover", change, false);
-
-buttons[0].addEventListener("mouseout", changeback, false);
-buttons[1].addEventListener("mouseout", changeback, false);
-
-function change(event) 
-{
-    event.target.style.color = "#12ccdd"    ;
-}
-
-
-function changeback(event) {
-    event.target.style.color = "white";
-}
 
 function next() 
 {
