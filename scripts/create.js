@@ -4,7 +4,7 @@ const patterns =
     email: [/^([a-z\d\.-_]+)@([a-z\d\.-]+)\.([a-z]{2,6})(\.[a-z]{2,6})?$/, `Your email should contain @, letters, numbers, _ ,- , .
      and no caps (no comma) eg 124_smtn-@domain.com or test.user@smtn.co.uk`],
     phone: [/^\d{11}$/, `Your number should contain only digits and must be 11 characters long.`],
-    address: [/^[\w\.]$/i, `Your address should contain only letters,numbers, or symbols and should be at least 20 characters long.`],
+    address: [/^[\w\.,-\\]$/i, `Your address should contain only letters,numbers, or symbols and should be at least 20 characters long.`],
     bvn: [/^\d{11}$/i, `Your bvn should contain only digits and should be 11 characters long.`],
 }
 
