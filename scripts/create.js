@@ -1,77 +1,125 @@
-const fields ={};
-const form = document.querySelector("form");
-const inputslabels = form.querySelectorAll("label");
-console.log(`i have ${inputslabels.length} labels`);
-inputslabels.forEach((el)=>fields[el.attributes.for.value] = [false,0]);
-
+const patterns = 
+{
+    name:[/^[a-z]{2,}$/i,`Your name should contain only letters and should be at least 2 characters long.`],
+    email: [/^([a-z\d\.-_]+)@([a-z\d\.-]+)\.([a-z]{2,6})(\.[a-z]{2,6})?$/, `Your email should contain @, letters, numbers, _ ,- , .
+     and no caps (no comma) eg 124_smtn-@domain.com or test.user@smtn.co.uk`],
+    phone: [/^\d{11}$/, `Your number should contain only digits and must be 11 characters long.`],
+    address: [/^[\w\.]$/i, `Your address should contain only letters,numbers, or symbols and should be at least 20 characters long.`],
+    bvn: [/^\d{11}$/i, `Your bvn should contain only digits and should be 11 characters long.`],
+}
 
 const panels = document.querySelectorAll("form > div");
 let panel = 0;
-const buttons =document.querySelectorAll("form > span")
+const buttons = document.querySelectorAll("form > span")
 panels[panel].style.display = "block";
 buttons[0].style.display = "none";
 
 let pgnum = document.querySelector("#current");
-
 let autohighlight = [document.querySelector("#fname"), document.querySelector("#kfname"), document.querySelector("#bvn")];
 
-
-console.log(`I have ${buttons.length} btns`);
-console.log(`I have ${panels.length} panels`)
 
 buttons[0].addEventListener("click",prev,false);
 buttons[1].addEventListener("click", next, false);
 
-function VerifyAll() 
+const inputs = [...document.querySelectorAll('.enter-info')];
+const fields ={};
+
+inputs.forEach(el => 
+    {
+        fields[el.attributes.name.value] = [false,null] ;
+        el.addEventListener("change", Verify, false);
+        el.type == "radio" ? null : el.insertAdjacentHTML("afterend", "<div class=\"error\"><div>")   ;
+    }
+    
+    
+    );
+
+
+function Verify(event) 
 {
-
-    let invalidFields = [];
-    let arr = [];
-    let start = 0;
-    let length = panels[0].querySelectorAll("label").length;
-    if (panel == 0)
+    
+    let target = event.target;
+    let fieldvalue = target.value;
+    let str = target.attributes.name.value;
+    if ( str.indexOf('name') >= 0)
     {
-        arr = panels[0].querySelectorAll("label") ;        
-       
-    }
-    else if (panel == 1) 
-    {
-        arr = panels[1].querySelectorAll("label");
-        start = length;
-        length = length + arr.length ;
-      
-    }
-    else if(panel == 2) 
-    {
-        arr = panels[2].querySelectorAll("label");
-        start = panels[1].querySelectorAll("label").length;
-        length = length + arr.length;
-           
-    }
-
-    for (let index = start; index < length; index++) 
-    {
-        if (fields[arr[index].attributes.name.value][0] == false) 
+        if (patterns['name'][0].test(fieldvalue)) 
         {
-            invalidFields.push[fields[arr[index].attributes.name.value]];
+            fields[str] =  [true,fieldvalue];
+            target.nextElementSibling.innerHTML = null;
+           
+        }
+
+        else
+        {
+            fields[str] = [false,null];
+            let errMsg = patterns['name'][1];
+            target.nextElementSibling.innerHTML = errMsg;
+            
+        }
+       
+    } 
+    else if ( str.indexOf('phone') >= 0) 
+    {
+        if (patterns['phone'][0].test(fieldvalue)) 
+        {
+            fields[str] = [true, fieldvalue];
+            target.nextElementSibling.innerHTML = null;
+            
+
+        }
+        
+        else 
+        {
+            fields[str] = [false, null];
+            let errMsg = patterns['phone'][1];
+            target.nextElementSibling.innerHTML = errMsg;
+
+        }
+
+    } 
+    else if ( str.indexOf('email') >= 0) 
+    {
+        if (patterns['email'][0].test(fieldvalue)) 
+        {
+            fields[str] = [true, fieldvalue];
+            target.nextElementSibling.innerHTML = null;
+            
+
+        }
+        else
+        {
+            fields[str] = [false, null];
+            let errMsg = patterns['email'][1];
+            target.nextElementSibling.innerHTML = errMsg;
+        }
+
+    } 
+    else if ( str.indexOf('bvn') >= 0) 
+    {
+        if ( patterns['bvn'][0].test(fieldvalue)) 
+        {
+            fields[str] = [true, fieldvalue];
+            target.nextElementSibling.innerHTML = null;
+            
+
+        }
+        else 
+        {
+            fields[str] = [false, null];
+            let errMsg = patterns['bvn'][1];
+            target.nextElementSibling.innerHTML = errMsg;
         }
 
     }
 
-    return invalidFields.length;
+    // else test for radio, textarea, select 
 
-}
-
-function Verify(event) 
-{
-    //get nodename
-    //see testing.html for how to add evtlistener in practice-4.html
+  
 
     
     
 }
-
-
 
 
 function next() 

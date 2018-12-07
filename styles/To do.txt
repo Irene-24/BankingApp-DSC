@@ -15,3 +15,5 @@ Work on verify function
 Make phone/bvn input large
 Change font size in mobile for text-area
 Maybe remove that bluestuff on arrow, it's not workin well on mobile
+
+Change the value of other in rlshp type
