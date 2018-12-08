@@ -9,10 +9,10 @@ const patterns =
 }
 
 const panels = document.querySelectorAll("form > div");
-let panel = 0;
-const buttons = document.querySelectorAll("form > span")
-panels[panel].style.display = "block";
-buttons[0].style.display = "none";
+
+
+
+
 
 let pgnum = document.querySelector("#current");
 let autohighlight = [document.querySelector("#fname"), document.querySelector("#kfname"), document.querySelector("#bvn")];
