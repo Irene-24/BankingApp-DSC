@@ -5,7 +5,6 @@ Beef up my index page text content
     -Work on background of header in desktop view
 Preview upload of files (passport)
 Work on fonts
-Navbar on create page
 Work on Gallery and Contact Page
 Work on footer
 Create a Print-out form which looks like profile page
@@ -14,6 +13,5 @@ Don't allow the to go to next unless thyeve filled in all the inputs of a panel 
 Work on verify function
 Make phone/bvn input large
 Change font size in mobile for text-area
-Maybe remove that bluestuff on arrow, it's not workin well on mobile
 
 Change the value of other in rlshp type
