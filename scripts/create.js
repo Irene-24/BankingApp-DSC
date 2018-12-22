@@ -257,11 +257,12 @@ function Verify(event)
             let reader = new FileReader();
             reader.onload = function () 
             {
-                let output = document.getElementById('output_image');
+               let output = document.getElementById('output_image');
                 output.src = reader.result;
             }
+               
             reader.readAsDataURL(event.target.files[0]);
-            fields['passport'] = [true, fieldvalue.substring(fieldvalue.lastIndexOf("/")+1,fieldvalue.length)];
+            fields['passport'] = [true, event.target.files[0].name];
         }   
 
 
